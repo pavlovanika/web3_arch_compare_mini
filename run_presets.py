@@ -35,8 +35,9 @@ def main() -> None:
         sys.exit(1)
 
     for idx, preset in enumerate(PRESETS, start=1):
-        print("=" * 80)
+             print("=" * 80)
         print(f"[{idx}] {preset['label']}")
+        print("-" * 80)
         print(f"    privacy    = {preset['privacy']}")
         print(f"    soundness  = {preset['soundness']}")
         print(f"    performance= {preset['performance']}")

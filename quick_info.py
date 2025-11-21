@@ -3,6 +3,7 @@ import platform
 import sys
 import os
 
+__version__ = "0.1.0"
 def main():
     print("=== QUICK INFO ===")
     print(f"Python version : {sys.version.split()[0]}")

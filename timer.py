@@ -43,7 +43,7 @@ def main() -> None:
     print(f"Started at: {start_ts}")
     print(f"Finished at: {end_ts}")
 
-    print(f"\nExit code: {result.returncode}")
+       print(f"\nCommand exit code: {result.returncode}")
     print(f"Elapsed : {end - start:.3f} seconds")
 
 

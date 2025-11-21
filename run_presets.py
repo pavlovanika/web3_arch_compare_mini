@@ -3,6 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+__all__ = ["PRESETS", "main"]
 
 PRESETS = [
     {

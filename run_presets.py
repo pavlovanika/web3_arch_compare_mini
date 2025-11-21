@@ -2,7 +2,7 @@
 import subprocess
 import sys
 from pathlib import Path
-
+import argparse
 
 PRESETS = [
     {
@@ -27,6 +27,19 @@ PRESETS = [
 
 
 def main() -> None:
+        parser = argparse.ArgumentParser(
+        description="Run one or more predefined presets against app.py."
+    )
+    parser.add_argument(
+        "--only",
+        type=int,
+        help="If set, only run the specified preset index (1-based).",
+    )
+    args = parser.parse_args()
+    for idx, preset in enumerate(PRESETS, start=1):
+        if args.only is not None and idx != args.only:
+            continue
+
     repo_root = Path(__file__).resolve().parent
     app_path = repo_root / "app.py"
 

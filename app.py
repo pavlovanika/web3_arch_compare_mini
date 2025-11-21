@@ -60,6 +60,7 @@ def score_profile(p: Profile, need_priv: int, need_snd: int, need_perf: int) -> 
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse CLI preferences for privacy, soundness, and performance."""
     parser = argparse.ArgumentParser(
         prog="web3_arch_compare_mini",
         description="Tiny comparator for Aztec, Zama, and soundness-first Web3 styles.",

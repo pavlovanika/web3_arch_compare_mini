@@ -24,6 +24,8 @@ def main():
 
     if args.filter:
         lines = [l for l in lines if args.filter in l]
+    if args.filter and not lines:
+        print(f"Filter '{args.filter}' matched 0 lines.")
 
     total = len(lines)
     errors = sum(1 for l in lines if "error" in l.lower())

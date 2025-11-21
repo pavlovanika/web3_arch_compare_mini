@@ -31,7 +31,9 @@ def main() -> None:
     cmd = args.command
 
     cmd = sys.argv[1:]
-    print(f"Running: {' '.join(cmd)}")
+       pretty = " ".join(repr(c) for c in cmd)
+    print(f"Running: {pretty}")
+
 
     start = time.time()
     result = subprocess.run(cmd)

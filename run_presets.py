@@ -24,6 +24,10 @@ PRESETS = [
         "performance": 9,
     },
 ]
+for p in PRESETS:
+    for field in ("label", "privacy", "soundness", "performance"):
+        if field not in p:
+            raise ValueError(f"Preset missing required field '{field}': {p}")
 
 
 def main() -> None:

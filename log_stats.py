@@ -5,7 +5,10 @@ import sys
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="Small log analysis script.")
+       p = argparse.ArgumentParser(
+        description="Small log analysis script.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
     p.add_argument("--filter", help="Only count lines containing this keyword")

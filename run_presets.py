@@ -4,7 +4,9 @@ import sys
 from pathlib import Path
 
 
+# Preset preference configurations: privacy / soundness / performance importance
 PRESETS = [
+
     {
         "label": "Privacy-heavy Aztec-style (high privacy, strong soundness, moderate performance)",
         "privacy": 9,

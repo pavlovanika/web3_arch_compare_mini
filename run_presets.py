@@ -29,6 +29,7 @@ PRESETS = [
 def main() -> None:
     repo_root = Path(__file__).resolve().parent
     app_path = repo_root / "app.py"
+    print(f"Using Python executable: {sys.executable}")
 
     if not app_path.is_file():
         print("ERROR: app.py not found next to run_presets.py", file=sys.stderr)

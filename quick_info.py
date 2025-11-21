@@ -26,5 +26,7 @@ def main() -> None:
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")
 
+# CLI entrypoint
 if __name__ == "__main__":
     main()
+

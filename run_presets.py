@@ -27,6 +27,7 @@ PRESETS = [
 
 
 def main() -> None:
+    """Run all predefined presets against app.py and print their outputs."""
     repo_root = Path(__file__).resolve().parent
     app_path = repo_root / "app.py"
 

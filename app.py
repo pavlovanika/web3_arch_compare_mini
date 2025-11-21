@@ -71,6 +71,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def label_fit(score: float) -> str:
+    """Map a numeric score in [0,1] to a text label: excellent/good/fair/weak."""
     if score >= 0.8:
         return "excellent"
     if score >= 0.65:

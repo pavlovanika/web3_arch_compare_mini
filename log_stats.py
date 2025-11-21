@@ -32,8 +32,9 @@ def main():
     print("=== LOG STATS ===")
     print(f"File        : {args.file}")
     print(f"Total lines : {total}")
-    print(f"Errors      : {errors}")
-    print(f"Warnings    : {warnings}")
+    print(f"Errors      : {errors} ({error_pct:.1f}%)")
+    print(f"Warnings    : {warnings} ({warn_pct:.1f}%)")
+    print("-" * 40)
 
     if total == 0:
         print("\n(No lines to analyze.)")

@@ -36,6 +36,12 @@ def main() -> None:
     start = time.time()
     result = subprocess.run(cmd)
     end = time.time()
+    from datetime import datetime
+
+    start_ts = datetime.now().isoformat(timespec="seconds")
+    end_ts = datetime.now().isoformat(timespec="seconds")
+    print(f"Started at: {start_ts}")
+    print(f"Finished at: {end_ts}")
 
     print(f"\nExit code: {result.returncode}")
     print(f"Elapsed : {end - start:.3f} seconds")

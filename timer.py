@@ -4,7 +4,8 @@ import sys
 import time
 
 
-def main():
+def main() -> None:
+    """Parse arguments, run the given command, and print timing."""
     if len(sys.argv) < 2:
         print("Usage: python timer.py <command> [args...]")
         sys.exit(1)

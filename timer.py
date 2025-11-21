@@ -12,9 +12,10 @@ def main():
     cmd = sys.argv[1:]
     print(f"Running: {' '.join(cmd)}")
 
-    start = time.time()
+     start = time.monotonic()
     result = subprocess.run(cmd)
-    end = time.time()
+    end = time.monotonic()
+
 
     print(f"\nExit code: {result.returncode}")
     print(f"Elapsed : {end - start:.3f} seconds")

@@ -3,7 +3,8 @@ import platform
 import sys
 import os
 
-def main():
+def main() -> None:
+    """Print quick diagnostic information about the current environment."""
     print("=== QUICK INFO ===")
     print(f"Python version : {sys.version.split()[0]}")
     print(f"Platform       : {platform.system()} {platform.release()}")

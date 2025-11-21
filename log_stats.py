@@ -5,6 +5,11 @@ import sys
 
 
 def parse_args():
+        p.add_argument(
+        "--encoding",
+        default="utf-8",
+        help="File encoding (default: utf-8).",
+    )
     p = argparse.ArgumentParser(description="Small log analysis script.")
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
@@ -19,7 +24,7 @@ def main() -> None:
     args = parse_args()
 
     try:
-        with open(args.file, "r", encoding="utf-8", errors="ignore") as f:
+              with open(args.file, "r", encoding=args.encoding, errors="ignore") as f:
             lines = f.readlines()
     except Exception as e:
         print(f"ERROR: Could not read {args.file}: {e}", file=sys.stderr)

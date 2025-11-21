@@ -105,8 +105,12 @@ def main() -> None:
         print(f"  {p.note}")
     best_key, best_score = results[0]
     best = PROFILES[best_key]
-    print("")
-    print(f"Recommended direction: {best.name} ({best.key}) with score {best_score:.3f}")
+      print("")
+    print(
+        f"Recommended direction: {best.name} ({best.key}) "
+        f"with score {best_score:.3f} (best match for your preferences)"
+    )
+
 
 
 if __name__ == "__main__":

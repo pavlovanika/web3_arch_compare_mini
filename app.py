@@ -63,6 +63,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="web3_arch_compare_mini",
         description="Tiny comparator for Aztec, Zama, and soundness-first Web3 styles.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument("--privacy", type=int, default=8, help="Privacy importance 0–10 (default 8).")
     parser.add_argument("--soundness", type=int, default=7, help="Soundness importance 0–10 (default 7).")

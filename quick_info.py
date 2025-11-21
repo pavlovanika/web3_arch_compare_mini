@@ -3,6 +3,9 @@ import platform
 import sys
 import os
 import argparse
+__version__ = "0.1.0"
+    print(f"Python version : {sys.version.split()[0]}")
+    print(f"Implementation : {platform.python_implementation()}")
 
 def main() -> None:
     """Print quick diagnostic information about the current environment."""

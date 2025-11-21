@@ -3,6 +3,7 @@ import platform
 import sys
 import os
 import argparse
+ENV_KEYS = ["PATH", "HOME", "USER", "SHELL"]
 
 def main() -> None:
     """Print quick diagnostic information about the current environment."""
@@ -22,7 +23,10 @@ def main() -> None:
     print(f"Platform       : {platform.system()} {platform.release()}")
     print(f"Machine        : {platform.machine()}")
     print(f"Working dir    : {os.getcwd()}")
-    print("\nEnvironment variables (selected):")
+      else:
+        print("\nEnvironment variables (selected):")
+        for key in ENV_KEYS:
+            ...
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")
 

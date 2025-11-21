@@ -45,7 +45,8 @@ def main() -> None:
     counter = Counter(lines)
     top = counter.most_common(args.top)
 
-    print(f"\nTop {args.top} most common lines:")
+      print()
+    print(f"Top {args.top} most common lines (min count = {args.min_count}):")
     for i, (line, count) in enumerate(top, 1):
         print(f"{i}. ({count}x) {line.strip()}")
 

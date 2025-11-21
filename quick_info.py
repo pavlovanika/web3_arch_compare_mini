@@ -2,9 +2,10 @@
 import platform
 import sys
 import os
+import textwrap
 
 def main():
-    print("=== QUICK INFO ===")
+       print("=== QUICK INFO ===")
     print(f"Python version : {sys.version.split()[0]}")
     print(f"Platform       : {platform.system()} {platform.release()}")
     print(f"Machine        : {platform.machine()}")

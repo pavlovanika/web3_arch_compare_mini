@@ -31,6 +31,9 @@ def main() -> None:
     cmd = args.command
 
     cmd = sys.argv[1:]
+    if not cmd:
+    print("ERROR: Empty command list.", file=sys.stderr)
+    sys.exit(1)
     print(f"Running: {' '.join(cmd)}")
 
     start = time.time()

@@ -94,9 +94,9 @@ def main() -> None:
 
     results.sort(key=lambda x: x[1], reverse=True)
 
-    print("🔎 web3_arch_compare_mini")
+       print("🔎 web3_arch_compare_mini")
     print(f"Needs  -> privacy: {need_priv}/10  soundness: {need_snd}/10  performance: {need_perf}/10")
-    print("")
+    print("-" * 60)
     print("Fit scores (best first):")
     for key, s in results:
         p = PROFILES[key]

@@ -25,6 +25,7 @@ def main() -> None:
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")
+    print("\nSummary: quick_info completed successfully.")
 
 if __name__ == "__main__":
     main()

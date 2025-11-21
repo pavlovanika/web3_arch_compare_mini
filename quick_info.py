@@ -19,7 +19,8 @@ def main() -> None:
 
     print("=== QUICK INFO ===")
     print(f"Python version : {sys.version.split()[0]}")
-    print(f"Platform       : {platform.system()} {platform.release()}")
+        print(f"Platform       : {platform.system()} {platform.release()}")
+    print(f"Platform full  : {platform.platform()}")
     print(f"Machine        : {platform.machine()}")
     print(f"Working dir    : {os.getcwd()}")
     print("\nEnvironment variables (selected):")

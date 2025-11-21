@@ -26,6 +26,9 @@ PRESETS = [
 ]
 
 
+# Exit codes:
+# 0 = all presets ran (even if some app.py calls failed)
+# 1 = setup error (e.g., app.py missing)
 def main() -> None:
     repo_root = Path(__file__).resolve().parent
     app_path = repo_root / "app.py"

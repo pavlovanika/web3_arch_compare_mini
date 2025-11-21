@@ -12,6 +12,20 @@ def main() -> None:
         action="store_true",
         help="Print script version and exit."
     )
+        parser.add_argument(
+        "--env-all",
+        action="store_true",
+            if args.env_all:
+        print("\nEnvironment variables (all):")
+        for key, value in sorted(os.environ.items()):
+            print(f"  {key}={value}")
+    else:
+        print("\nEnvironment variables (selected):")
+        for key in ["PATH", "HOME", "USER", "SHELL"]:
+            print(f"  {key}: {os.getenv(key)}")
+
+    )
+
     args = parser.parse_args()
     if args.version:
         print(f"quick_info version {__version__}")

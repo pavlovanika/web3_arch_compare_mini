@@ -53,7 +53,9 @@ def main() -> None:
             str(preset["performance"]),
         ]
 
+                print(f"Running: {' '.join(cmd)}")
         result = subprocess.run(cmd, text=True, capture_output=True)
+
 
         if result.stdout:
             print(result.stdout.strip())

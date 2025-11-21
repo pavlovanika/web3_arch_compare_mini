@@ -27,4 +27,8 @@ def main() -> None:
         print(f"  {key}: {os.getenv(key)}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nInterrupted by user.")
+        sys.exit(130)

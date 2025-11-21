@@ -5,6 +5,9 @@ import sys
 import time
 
 
+# Exit codes:
+# 0 = success (command ran, regardless of its own return code)
+# 1 = usage or argument error
 def main() -> None:
     """Parse arguments, run the given command, and print timing."""
     parser = argparse.ArgumentParser(description="Time how long a command takes to run.")

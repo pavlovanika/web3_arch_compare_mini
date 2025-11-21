@@ -3,9 +3,16 @@ import argparse
 from collections import Counter
 import sys
 
+__version__ = "0.1.0"
 
 def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")
+        p.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="Show program version and exit.",
+    )
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
     p.add_argument("--filter", help="Only count lines containing this keyword")

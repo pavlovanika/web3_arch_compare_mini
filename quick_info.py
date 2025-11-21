@@ -25,6 +25,8 @@ def main() -> None:
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")
+    venv = os.getenv("VIRTUAL_ENV")
+    print(f"Virtualenv     : {venv if venv else '<none>'}")
 
 if __name__ == "__main__":
     main()

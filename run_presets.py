@@ -34,6 +34,10 @@ def main() -> None:
         print("ERROR: app.py not found next to run_presets.py", file=sys.stderr)
         sys.exit(1)
 
+    if not app_path.suffix == ".py":
+        print(f"ERROR: expected a Python file at {app_path}", file=sys.stderr)
+        sys.exit(1)
+
     for idx, preset in enumerate(PRESETS, start=1):
         print("=" * 80)
         print(f"[{idx}] {preset['label']}")

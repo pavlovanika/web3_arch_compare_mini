@@ -2,6 +2,14 @@
 import subprocess
 import sys
 from pathlib import Path
+from typing import TypedDict
+
+
+class Preset(TypedDict):
+    label: str
+    privacy: int
+    soundness: int
+    performance: int
 
 
 PRESETS = [

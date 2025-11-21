@@ -2,7 +2,7 @@
 import subprocess
 import sys
 from pathlib import Path
-
+import argparse
 
 PRESETS = [
     {
@@ -27,6 +27,16 @@ PRESETS = [
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Run preset privacy/soundness/performance values against app.py."
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Pass --json to app.py for each preset.",
+    )
+    args = parser.parse_args()
+
     repo_root = Path(__file__).resolve().parent
     app_path = repo_root / "app.py"
 

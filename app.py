@@ -6,6 +6,7 @@ from typing import Dict, List
 
 @dataclass
 class Profile:
+    """High-level Web3 architecture profile used for simple fit scoring."""
     key: str
     name: str
     privacy: float      # 0–1

@@ -24,6 +24,7 @@ PRESETS = [
         "performance": 9,
     },
 ]
+VERSION = "1.0.0"
 
 
 def main() -> None:
@@ -41,6 +42,11 @@ def main() -> None:
         print(f"    soundness  = {preset['soundness']}")
         print(f"    performance= {preset['performance']}")
         print("-" * 80)
+    parser.add_argument(
+        "--version",
+        action="store_true",
+        help="Print script version and exit."
+    )
 
         cmd = [
             sys.executable,

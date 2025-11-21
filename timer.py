@@ -47,5 +47,6 @@ def main() -> None:
     print(f"Elapsed : {end - start:.3f} seconds")
 
 
+# CLI entrypoint
 if __name__ == "__main__":
     main()

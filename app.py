@@ -43,8 +43,8 @@ PROFILES: Dict[str, Profile] = {
 
 
 def clamp01(x: float) -> float:
+    """Clamp a floating-point value into the inclusive range [0.0, 1.0]."""
     return max(0.0, min(1.0, x))
-
 
 def score_profile(p: Profile, need_priv: int, need_snd: int, need_perf: int) -> float:
     priv_need = clamp01(need_priv / 10.0)

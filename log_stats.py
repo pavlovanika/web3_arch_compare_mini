@@ -42,12 +42,17 @@ def main() -> None:
         print("\n(No lines to analyze.)")
         return
 
-    counter = Counter(lines)
-    top = counter.most_common(args.top)
+if args.top <= 0:
+    print("\nTop lines disabled (--top=0).")
+    return
 
-    print(f"\nTop {args.top} most common lines:")
-    for i, (line, count) in enumerate(top, 1):
-        print(f"{i}. ({count}x) {line.strip()}")
+counter = Counter(lines)
+top = counter.most_common(args.top)
+
+print(f"\nTop {args.top} most common lines:")
+for i, (line, count) in enumerate(top, 1):
+    print(f"{i}. ({count}x) {line.strip()}")
+
 
 
 if __name__ == "__main__":

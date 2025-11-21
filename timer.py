@@ -3,7 +3,7 @@ import subprocess
 import sys
 import time
 
-
+__version__ = "0.1.0"
 def main():
     if len(sys.argv) < 2:
         print("Usage: python timer.py <command> [args...]")

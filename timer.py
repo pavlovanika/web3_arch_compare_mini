@@ -34,7 +34,7 @@ def main() -> None:
     print(f"Running: {' '.join(cmd)}")
 
     start = time.time()
-    result = subprocess.run(cmd)
+    result = subprocess.run(cmd, shell=False)
     end = time.time()
     from datetime import datetime
 

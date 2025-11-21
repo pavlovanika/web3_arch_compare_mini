@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Small log analysis script: counts total lines, errors, warnings,
+and shows the most common log lines.
+"""
 import argparse
 from collections import Counter
 import sys

@@ -3,6 +3,7 @@ import argparse
 from dataclasses import dataclass
 from typing import Dict, List
 
+__version__ = "0.1.0"
 
 @dataclass
 class Profile:
@@ -67,6 +68,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--privacy", type=int, default=8, help="Privacy importance 0–10 (default 8).")
     parser.add_argument("--soundness", type=int, default=7, help="Soundness importance 0–10 (default 7).")
     parser.add_argument("--performance", type=int, default=6, help="Performance importance 0–10 (default 6).")
+        parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="Show program version and exit.",
+    )
+
     return parser.parse_args()
 
 

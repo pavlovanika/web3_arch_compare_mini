@@ -16,9 +16,9 @@ def main():
     result = subprocess.run(cmd)
     end = time.time()
 
+     elapsed = end - start
     print(f"\nExit code: {result.returncode}")
-    print(f"Elapsed : {end - start:.3f} seconds")
-
+    print(f"Elapsed : {elapsed:.3f} seconds ({elapsed * 1000:.1f} ms)")
 
 if __name__ == "__main__":
     main()

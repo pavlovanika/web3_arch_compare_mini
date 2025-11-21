@@ -12,6 +12,15 @@ def main() -> None:
         action="store_true",
         help="Print script version and exit."
     )
+        parser.add_argument(
+        "--no-env",
+        action="store_true",
+        help="Do not print any environment variables.",
+    )
+if args.no_env:
+        return
+
+    if args.env_all:
     args = parser.parse_args()
     if args.version:
         print(f"quick_info version {__version__}")

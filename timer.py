@@ -46,6 +46,8 @@ def main() -> None:
     print(f"\nExit code: {result.returncode}")
     print(f"Elapsed : {end - start:.3f} seconds")
 
+    import platform
+    print(f"Using Python: {sys.version.split()[0]} on {platform.system()}")
 
 if __name__ == "__main__":
     main()

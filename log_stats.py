@@ -32,8 +32,10 @@ def main() -> None:
     errors = sum(1 for l in lines if "error" in l.lower())
     warnings = sum(1 for l in lines if "warn" in l.lower())
 
-    print("=== LOG STATS ===")
+      print("=== LOG STATS ===")
     print(f"File        : {args.file}")
+    if args.filter:
+        print(f"Filter      : {args.filter!r}")
     print(f"Total lines : {total}")
     print(f"Errors      : {errors}")
     print(f"Warnings    : {warnings}")

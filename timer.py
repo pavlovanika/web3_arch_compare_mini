@@ -13,6 +13,12 @@ def main() -> None:
         action="store_true",
         help="Print script version and exit."
     )
+        parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Do not print the 'Running:' line.",
+    )
+
     parser.add_argument(
         "command",
         nargs=argparse.REMAINDER,
@@ -27,7 +33,9 @@ def main() -> None:
     if not args.command:
         print("Usage: timer.py <command> [args...]", file=sys.stderr)
         sys.exit(1)
-
+  if not args.quiet:
+        pretty = " ".join(repr(c) for c in cmd)
+        print(f"Running: {pretty}")
     cmd = args.command
 
     cmd = sys.argv[1:]

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Print a quick snapshot of Python, OS, and a few key environment variables.
+"""
 import platform
 import sys
 import os

@@ -25,6 +25,35 @@ PRESETS = [
     },
 ]
 
+def run_preset(idx: int, preset: dict, app_path: Path, extra_args: list[str] | None = None) -> None:
+    if extra_args is None:
+        extra_args = []
+    print("=" * 80)
+    print(f"[{idx}] {preset['label']}")
+    print(f"    privacy    = {preset['privacy']}")
+    print(f"    soundness  = {preset['soundness']}")
+    print(f"    performance= {preset['performance']}")
+    print("-" * 80)
+
+    cmd = [
+        sys.executable,
+        str(app_path),
+        "--privacy",
+        str(preset["privacy"]),
+        "--soundness",
+        str(preset["soundness"]),
+        "--performance",
+        str(preset["performance"]),
+    ] + extra_args
+
+    result = subprocess.run(cmd, text=True, capture_output=True)
+
+    if result.stdout:
+        print(result.stdout.strip())
+    if result.stderr:
+        print("[stderr]", result.stderr.strip(), file=sys.stderr)
+
+    print()
 
 def main() -> None:
     repo_root = Path(__file__).resolve().parent
@@ -34,7 +63,8 @@ def main() -> None:
         print("ERROR: app.py not found next to run_presets.py", file=sys.stderr)
         sys.exit(1)
 
-    for idx, preset in enumerate(PRESETS, start=1):
+       for idx, preset in enumerate(PRESETS, start=1):
+        run_preset(idx, preset, app_path)
         print("=" * 80)
         print(f"[{idx}] {preset['label']}")
         print(f"    privacy    = {preset['privacy']}")

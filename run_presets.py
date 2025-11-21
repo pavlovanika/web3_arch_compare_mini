@@ -54,6 +54,9 @@ def main() -> None:
         ]
 
         result = subprocess.run(cmd, text=True, capture_output=True)
+    print("=" * 80)
+    print(f"Ran {len(PRESETS)} preset(s).")
+    print("Done running all presets.")
 
         if result.stdout:
             print(result.stdout.strip())

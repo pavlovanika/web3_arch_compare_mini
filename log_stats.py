@@ -8,7 +8,11 @@ def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
-    p.add_argument("--filter", help="Only count lines containing this keyword")
+       p.add_argument(
+        "--case-sensitive",
+        action="store_true",
+        help="Make filter matching case-sensitive (default: case-insensitive).",
+    )
     return p.parse_args()
 
 

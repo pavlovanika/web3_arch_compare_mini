@@ -24,7 +24,8 @@ def main() -> None:
     print(f"Working dir    : {os.getcwd()}")
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:
-        print(f"  {key}: {os.getenv(key)}")
+                print(f"  {key:<6}: {value}")
+
 
 if __name__ == "__main__":
     main()

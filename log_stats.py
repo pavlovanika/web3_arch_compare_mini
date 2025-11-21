@@ -4,7 +4,8 @@ from collections import Counter
 import sys
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments for the log analysis tool."""
     p = argparse.ArgumentParser(description="Small log analysis script.")
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
@@ -12,7 +13,8 @@ def parse_args():
     return p.parse_args()
 
 
-def main():
+def main() -> None:
+    """Entry point: load the log file, compute stats, and print a summary."""
     args = parse_args()
 
     try:

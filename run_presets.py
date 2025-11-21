@@ -62,8 +62,8 @@ def main() -> None:
 
         print()  # blank line between presets
 
-    print("=" * 80)
-    print("Done running all presets.")
+      print("=" * 80)
+    print("Done running all presets against app.py.")
 
 
 if __name__ == "__main__":

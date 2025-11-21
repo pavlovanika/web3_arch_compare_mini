@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+web3_arch_compare_mini — compare Aztec, Zama and soundness-first profiles
+based on privacy, soundness, and performance preferences.
+"""
 import argparse
 from dataclasses import dataclass
 from typing import Dict, List

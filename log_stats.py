@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Small log analysis script: counts total lines, errors, warnings,
+and shows the most common log lines.
+
+Example:
+  python log_stats.py --file app.log --top 10 --filter ERROR
+"""
+
 import argparse
 from collections import Counter
 import sys

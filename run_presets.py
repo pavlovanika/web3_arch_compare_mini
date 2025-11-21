@@ -53,7 +53,9 @@ def main() -> None:
             str(preset["performance"]),
         ]
 
-        result = subprocess.run(cmd, text=True, capture_output=True)
+               result = subprocess.run(cmd, text=True, capture_output=True)
+        # or, more strict:
+        # result = subprocess.run(cmd, text=True, capture_output=True, check=False)
 
         if result.stdout:
             print(result.stdout.strip())

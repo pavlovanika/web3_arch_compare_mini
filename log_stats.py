@@ -26,6 +26,7 @@ def main():
         lines = [l for l in lines if args.filter in l]
 
     total = len(lines)
+      # Error/warning detection is case-insensitive by design
     errors = sum(1 for l in lines if "error" in l.lower())
     warnings = sum(1 for l in lines if "warn" in l.lower())
 

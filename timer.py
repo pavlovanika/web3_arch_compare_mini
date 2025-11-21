@@ -1,4 +1,7 @@
-#!/usr/bin/env python3""
+#!/usr/bin/env python3
+"""
+Run a command and report its exit code and elapsed wall-clock time.
+"""
 import subprocess
 import sys
 import time

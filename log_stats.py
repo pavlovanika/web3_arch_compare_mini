@@ -2,7 +2,7 @@
 import argparse
 from collections import Counter
 import sys
-
+__all__ = ["parse_args", "main"]
 
 def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")

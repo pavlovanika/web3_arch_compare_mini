@@ -25,7 +25,7 @@ def main() -> None:
         return
 
     if not args.command:
-        print("Usage: timer.py <command> [args...]", file=sys.stderr)
+             print("Usage: python timer.py <command> [args...]", file=sys.stderr)
         sys.exit(1)
 
     cmd = args.command

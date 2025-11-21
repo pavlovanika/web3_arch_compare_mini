@@ -1,4 +1,11 @@
-#!/usr/bin/env python3""
+#!/usr/bin/env python3
+"""
+Run a command and report its exit code and elapsed wall-clock time.
+
+Example:
+  python timer.py ls -l
+"""
+
 import argparse
 import subprocess
 import sys

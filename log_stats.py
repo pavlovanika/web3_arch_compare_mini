@@ -12,7 +12,10 @@ def parse_args():
     return p.parse_args()
 
 
-def main():
+# Exit codes:
+# 0 = success
+# 1 = I/O or argument error
+def main() -> None:
     args = parse_args()
 
     try:

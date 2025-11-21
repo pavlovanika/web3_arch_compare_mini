@@ -6,6 +6,12 @@ import sys
 
 def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")
+        p.add_argument(
+        "--no-top",
+        action="store_true",
+        help="Skip printing the top N most common lines.",
+    )
+
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
     p.add_argument("--filter", help="Only count lines containing this keyword")
@@ -39,7 +45,10 @@ def main():
         print("\n(No lines to analyze.)")
         return
 
-    counter = Counter(lines)
+    if args.no_top:
+        return
+
+    counter = Counter(normalized_lines)
     top = counter.most_common(args.top)
 
     print(f"\nTop {args.top} most common lines:")

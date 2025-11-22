@@ -5,14 +5,17 @@ import os
 import argparse
 
 def main() -> None:
-    """Print quick diagnostic information about the current environment."""
     parser = argparse.ArgumentParser(description="Print quick system & Python info.")
     parser.add_argument(
-        "--version",
+        "--debug",
         action="store_true",
-        help="Print script version and exit."
+        help="Print raw sys.argv for debugging."
     )
     args = parser.parse_args()
+
+    if args.debug:
+        print(f"argv           : {sys.argv}")
+
     if args.version:
         print(f"quick_info version {__version__}")
         return

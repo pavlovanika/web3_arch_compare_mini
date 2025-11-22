@@ -4,6 +4,9 @@ import sys
 import os
 import argparse
 
+# Exit codes:
+# 0 = success
+# 130 = interrupted by user (Ctrl+C)
 def main() -> None:
     """Print quick diagnostic information about the current environment."""
     parser = argparse.ArgumentParser(description="Print quick system & Python info.")

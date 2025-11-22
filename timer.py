@@ -43,9 +43,9 @@ def main() -> None:
     print(f"Started at: {start_ts}")
     print(f"Finished at: {end_ts}")
 
+     elapsed = end - start
     print(f"\nExit code: {result.returncode}")
-    print(f"Elapsed : {end - start:.3f} seconds")
-
+    print(f"Elapsed : {elapsed:.3f} seconds ({elapsed * 1000:.1f} ms)")
 
 if __name__ == "__main__":
     main()

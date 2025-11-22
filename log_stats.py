@@ -31,12 +31,14 @@ def main() -> None:
     total = len(lines)
     errors = sum(1 for l in lines if "error" in l.lower())
     warnings = sum(1 for l in lines if "warn" in l.lower())
+    error_pct = (errors / total * 100.0) if total else 0.0
+    warn_pct = (warnings / total * 100.0) if total else 0.0
 
     print("=== LOG STATS ===")
     print(f"File        : {args.file}")
     print(f"Total lines : {total}")
-    print(f"Errors      : {errors}")
-    print(f"Warnings    : {warnings}")
+    print(f"Errors      : {errors} ({error_pct:.1f}%)")
+    print(f"Warnings    : {warnings} ({warn_pct:.1f}%)")
 
     if total == 0:
         print("\n(No lines to analyze.)")

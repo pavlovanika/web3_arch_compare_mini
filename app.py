@@ -47,6 +47,12 @@ def clamp01(x: float) -> float:
 
 
 def score_profile(p: Profile, need_priv: int, need_snd: int, need_perf: int) -> float:
+    """
+    Score how well a profile matches the caller's needs.
+
+    Inputs need_* are from 0–10 and mapped into [0,1],
+    then compared against profile attributes with a weighted average.
+    """
     priv_need = clamp01(need_priv / 10.0)
     snd_need = clamp01(need_snd / 10.0)
     perf_need = clamp01(need_perf / 10.0)

@@ -18,9 +18,10 @@ def main() -> None:
         return
 
     print("=== QUICK INFO ===")
-    print(f"Python version : {sys.version.split()[0]}")
+     print(f"Python version : {sys.version.split()[0]}")
     print(f"Platform       : {platform.system()} {platform.release()}")
     print(f"Machine        : {platform.machine()}")
+    print(f"Process ID     : {os.getpid()}")
     print(f"Working dir    : {os.getcwd()}")
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:

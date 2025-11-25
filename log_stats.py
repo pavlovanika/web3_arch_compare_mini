@@ -42,7 +42,8 @@ def main() -> None:
         print("\n(No lines to analyze.)")
         return
 
-    counter = Counter(lines)
+      normalized_lines = [l.rstrip("\n") for l in lines]
+    counter = Counter(normalized_lines)
     top = counter.most_common(args.top)
 
     print(f"\nTop {args.top} most common lines:")

@@ -6,6 +6,11 @@ import sys
 
 def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")
+        p.add_argument(
+        "--strip",
+        action="store_true",
+        help="Strip leading/trailing whitespace before counting lines.",
+    )
     p.add_argument("--file", required=True, help="Path to log file")
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
     p.add_argument("--filter", help="Only count lines containing this keyword")
@@ -43,6 +48,13 @@ def main() -> None:
         return
 
     counter = Counter(lines)
+    if args.strip:
+        normalized_lines = [l.strip() for l in lines]
+    else:
+        normalized_lines = [l.rstrip("\n") for l in lines]
+
+    counter = Counter(normalized_lines)
+
     top = counter.most_common(args.top)
 
     print(f"\nTop {args.top} most common lines:")

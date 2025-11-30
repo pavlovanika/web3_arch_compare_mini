@@ -100,7 +100,7 @@ def main() -> None:
     print("Fit scores (best first):")
     for key, s in results:
         p = PROFILES[key]
-        bar = "█" * int(s * 20)
+                bar = "█" * max(1, int(round(s * 20)))
         print(f"- {p.name:25s} ({key}): {s:.3f} [{label_fit(s)}] {bar}")
         print(f"  {p.note}")
     best_key, best_score = results[0]

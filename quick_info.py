@@ -3,6 +3,7 @@ import platform
 import sys
 import os
 import argparse
+from pathlib import Path
 
 def main() -> None:
     """Print quick diagnostic information about the current environment."""
@@ -21,7 +22,7 @@ def main() -> None:
     print(f"Python version : {sys.version.split()[0]}")
     print(f"Platform       : {platform.system()} {platform.release()}")
     print(f"Machine        : {platform.machine()}")
-    print(f"Working dir    : {os.getcwd()}")
+        print(f"Working dir    : {Path.cwd()}")
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")

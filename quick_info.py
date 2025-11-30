@@ -12,7 +12,16 @@ def main() -> None:
         action="store_true",
         help="Print script version and exit."
     )
+        parser.add_argument(
+        "--short",
+        action="store_true",
+        help="Print only Python version and platform.",
+    )
+
     args = parser.parse_args()
+    if args.short:
+        print(f"Python {sys.version.split()[0]} on {platform.system()} {platform.release()}")
+        return
     if args.version:
         print(f"quick_info version {__version__}")
         return
@@ -21,7 +30,7 @@ def main() -> None:
     print(f"Python version : {sys.version.split()[0]}")
     print(f"Platform       : {platform.system()} {platform.release()}")
     print(f"Machine        : {platform.machine()}")
-    print(f"Working dir    : {os.getcwd()}")
+       print(f"Working dir    : {Path.cwd()}")
     print("\nEnvironment variables (selected):")
     for key in ["PATH", "HOME", "USER", "SHELL"]:
         print(f"  {key}: {os.getenv(key)}")

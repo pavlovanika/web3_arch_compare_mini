@@ -5,8 +5,9 @@ based on privacy, soundness, and performance preferences.
 """
 import argparse
 from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
+ScoreList = List[Tuple[str, float]]
 
 @dataclass
 class Profile:

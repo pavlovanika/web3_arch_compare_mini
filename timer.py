@@ -4,6 +4,7 @@ import subprocess
 import sys
 import time
 
+__all__ = ["main"]
 
 def main() -> None:
     """Parse arguments, run the given command, and print timing."""

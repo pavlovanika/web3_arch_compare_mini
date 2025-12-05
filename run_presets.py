@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Run a set of predefined privacy/soundness/performance presets
+against app.py (web3_arch_compare_mini) for quick comparison.
+"""
 import subprocess
 import sys
 from pathlib import Path

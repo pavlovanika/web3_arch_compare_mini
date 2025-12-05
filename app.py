@@ -73,6 +73,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--privacy", type=int, default=8, help="Privacy importance 0–10 (default 8).")
     parser.add_argument("--soundness", type=int, default=7, help="Soundness importance 0–10 (default 7).")
     parser.add_argument("--performance", type=int, default=6, help="Performance importance 0–10 (default 6).")
+        parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print results as JSON instead of human-readable text."
+    )
     return parser.parse_args()
 
 
@@ -98,9 +103,35 @@ def main() -> None:
         s = score_profile(p, need_priv, need_snd, need_perf)
         results.append((key, s))
 
-    results.sort(key=lambda x: x[1], reverse=True)
+     results.sort(key=lambda x: x[1], reverse=True)
 
-    print("🔎 web3_arch_compare_mini")
+    # JSON mode
+    if args.json:
+        out = []
+        for key, s in results:
+            p = PROFILES[key]
+            out.append({
+                "key": key,
+                "name": p.name,
+                "score": round(s, 4),
+                "label": label_fit(s),
+                "privacy": p.privacy,
+                "soundness": p.soundness,
+                "performance": p.performance,
+                "note": p.note,
+            })
+        import json
+        print(json.dumps({
+            "requirements": {
+                "privacy": need_priv,
+                "soundness": need_snd,
+                "performance": need_perf,
+            },
+            "ranked": out,
+            "recommended": results[0][0],
+        }, indent=2, sort_keys=True))
+        return
+
     print(f"Needs  -> privacy: {need_priv}/10  soundness: {need_snd}/10  performance: {need_perf}/10")
     print("")
     print("Fit scores (best first):")

@@ -15,6 +15,7 @@ class Preset(TypedDict):
     soundness: int
     performance: int
 
+__all__ = ["PRESETS", "main"]
 
 PRESETS = [
     {

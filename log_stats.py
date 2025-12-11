@@ -7,6 +7,12 @@ import sys
 def parse_args():
     p = argparse.ArgumentParser(description="Small log analysis script.")
     p.add_argument("--file", required=True, help="Path to log file")
+        p.add_argument(
+        "--min-count",
+        type=int,
+        default=1,
+        help="Only show lines that occur at least this many times.",
+    )
     p.add_argument("--top", type=int, default=5, help="Show N most common lines")
     p.add_argument("--filter", help="Only count lines containing this keyword")
     return p.parse_args()
@@ -45,9 +51,16 @@ def main() -> None:
     counter = Counter(lines)
     top = counter.most_common(args.top)
 
-    print(f"\nTop {args.top} most common lines:")
-    for i, (line, count) in enumerate(top, 1):
-        print(f"{i}. ({count}x) {line.strip()}")
+        print(f"\nTop {args.top} most common lines (min count = {args.min_count}):")
+    shown = 0
+    for line, count in top:
+        if count < args.min_count:
+            continue
+        shown += 1
+        print(f"{shown}. ({count}x) {line.strip()}")
+
+    if shown == 0:
+        print("No lines met the minimum count threshold.")
 
 
 if __name__ == "__main__":

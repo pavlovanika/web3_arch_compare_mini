@@ -91,6 +91,8 @@ def label_fit(score: float) -> str:
     return "weak"
 
 
+# Exit codes:
+# 0 = success (no notion of pass/fail, just a recommendation)
 def main() -> None:
     args = parse_args()
 

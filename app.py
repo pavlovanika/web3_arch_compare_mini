@@ -139,7 +139,8 @@ def main() -> None:
         p = PROFILES[key]
         bar = "█" * int(s * 20)
         print(f"- {p.name:25s} ({key}): {s:.3f} [{label_fit(s)}] {bar}")
-        print(f"  {p.note}")
+              print(f"  {p.note}")
+        print()
     best_key, best_score = results[0]
     best = PROFILES[best_key]
     print("")
